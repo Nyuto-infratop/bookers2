@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about', as: 'about'
   resources :books, only: [:index, :show, :edit, :create, :update, :destroy] do
     resources :book_comments, only:[:create, :destroy]
-    resource :favorite, only: [:create, :destroy]  
+    resource :favorites, only: [:create, :destroy]  
   end  
   resources :users, only: [:edit, :index, :show,  :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
